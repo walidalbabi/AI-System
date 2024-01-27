@@ -2,57 +2,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIState_Idle : AIState
+
+namespace EternalVision.AI
 {
-    [Header("Idle Time Range")]
-    [SerializeField] private float _minIdleTime;
-    [SerializeField] private float _maxIdleTime;
-
-
-    private bool _isIdleFinish;
-
-    public override AIState Tick()
+    public class AIState_Idle : AIState
     {
-        _aiZombieManager.FindATargerViaLineOfSight();
+        [Header("Idle Time Range")]
+        [SerializeField] private float _minIdleTime;
+        [SerializeField] private float _maxIdleTime;
 
-        if (_aiZombieManager.currentTarget.targetType == AITargetType.Enemy && _aiZombieManager.currentTarget.targetTransform != null)
+
+        private bool _isIdleFinish;
+
+      
+        public override void OnEnterState()
         {
-            return _aiZombieManager.GetAIState(AIStateEnum.Pursuit);
+            //m_possessedAI.currentTarget.Settarget(null, Vector3.zero, 0, AITargetType.none);
+            if (m_possessedAI.entityBrain.entityAnimator != null)
+            {
+                m_possessedAI.entityBrain.entityAnimator.SetFloat("Vertical", 0f, .1f);
+                m_possessedAI.entityBrain.entityAnimator.SetFloat("Horziontal", 0f, .1f);
+                m_possessedAI.entityBrain.entityAnimator.SetFloat("Speed", 0f, .1f);
+            }
+
+            StartCoroutine(WaitforIdleToFinish(Random.Range(_minIdleTime, _maxIdleTime)));
+
+            m_possessedAI.SetFOVAngleToNormal();
+        }
+        public override AIState Tick()
+        {
+            m_possessedAI.FindATargerViaLineOfSight();
+
+            if (m_possessedAI.currentTarget.targetType == AITargetType.Enemy && m_possessedAI.currentTarget.targetTransform != null)
+            {
+                return m_possessedAI.GetAIState(AIStateEnum.Pursuit);
+            }
+
+            if (_isIdleFinish)
+            {
+                _isIdleFinish = false;
+                return m_possessedAI.GetAIState(AIStateEnum.Patrol);
+            }
+
+            return this;
         }
 
-        if (_isIdleFinish)
+
+        private IEnumerator WaitforIdleToFinish(float delay)
         {
-            _isIdleFinish = false;
-            return _aiZombieManager.GetAIState(AIStateEnum.Patrol);
+            yield return new WaitForSeconds(delay);
+            _isIdleFinish = true;
         }
 
-        return this;
-    }
 
-    public override void OnEnterState()
-    {
-        //_aiZombieManager.currentTarget.Settarget(null, Vector3.zero, 0, AITargetType.none);
-        if(_aiZombieManager.anim != null)
-        {
-            _aiZombieManager.anim.SetFloat("Vertical", 0f);
-            _aiZombieManager.anim.SetFloat("Horziontal", 0f);
-            _aiZombieManager.anim.SetFloat("Speed", 0f);
-        }
-
-        StartCoroutine(WaitforIdleToFinish(Random.Range(_minIdleTime, _maxIdleTime)));
-
-        _aiZombieManager.SetFOVAngleToNormal();
-    }
-
-    private IEnumerator WaitforIdleToFinish(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        _isIdleFinish = true;
-    }
-
-
-    public override void SetAIManagerComponent(AIZombieManager component)
-    {
-        _aiZombieManager = component;
     }
 }
+

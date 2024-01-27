@@ -1,39 +1,63 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EternalVision.EntitySystem;
 
-public class AIDamageArea : MonoBehaviour
+namespace EternalVision.AI
 {
-    private float _dmg;
-    private Collider _collider;
-    private int _ownerHash;
-
-    private void Awake()
+    public class AIDamageArea : EntityItem
     {
-        _dmg = GetComponentInParent<AIZombieManager>().attackDamage;
-        _collider = GetComponent<Collider>();
+        //Private
+        private float _dmg;
+        private int _ownerHash;
+        private Collider _collider;
 
-        _ownerHash = GetComponentInParent<AIZombieManager>().gameObject.GetHashCode();
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-     //   if (!GameManager.instance.networkContext.Ownership.isServer) return;
-
-        I_Hitbox targetHit = other.gameObject.GetComponent<I_Hitbox>();
-
-        if (targetHit != null)
+        private void Awake()
         {
+            _collider = GetComponent<Collider>();
 
-            if (_ownerHash == targetHit.ownerHash)
+            _ownerHash = GetComponentInParent<PossessedAI>().gameObject.GetHashCode();
+        }
+        private void OnTriggerEnter(Collider other)
+        {
+            IHitbox targetHit = other.gameObject.GetComponent<IHitbox>();
+
+            if (targetHit != null)
             {
-                Physics.IgnoreCollision(_collider, other);
-                return;
-            }
 
-            _collider.enabled = false;
-            Debug.Log("<color=red> AI Damage : </color>" + _dmg + " " + other.gameObject.name);
-            other.gameObject.GetComponent<I_Hitbox>().Hit((int)_dmg, transform.parent.gameObject);
+                if (_ownerHash == targetHit.GetOwnerHash())
+                {
+                    Physics.IgnoreCollision(_collider, other);
+                    return;
+                }
+
+                _collider.enabled = false;
+                Debug.Log("<color=red> AI Damage : </color>" + _dmg + " " + other.gameObject.name);
+
+
+                if (!targetHit.Equals(null))
+                {
+                    HitData newHitData = new HitData(m_entityBrainOwner.transform, other.ClosestPointOnBounds(targetHit.GetPosition()));
+                    targetHit.DoDamage(newHitData, (int)_dmg);
+                }
+
+            }
+        }
+
+        public override void EquipItem()
+        {
+            return;
+        }
+        public override bool UseItemFirstAction()
+        {
+            return false;
+        }
+
+        public override bool UseItemSecondAction()
+        {
+            return false;
         }
     }
+
 }
+

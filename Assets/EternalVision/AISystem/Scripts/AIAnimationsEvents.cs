@@ -2,36 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIAnimationsEvents : MonoBehaviour
+namespace EternalVision.AI
 {
-
-    private AIZombieManager _aiZombieManager;
-
-    private void Awake()
+    public class AIAnimationsEvents : MonoBehaviour
     {
-        _aiZombieManager = GetComponent<AIZombieManager>();
+
+        private PossessedAI _aiZombieManager;
+
+        private void Awake()
+        {
+            _aiZombieManager = GetComponent<PossessedAI>();
+        }
+
+
+        public void OnLeftAttack()
+        {
+            //m_possessedAI.leftDamageArea.enabled = true;
+        }
+
+        public void OnRightAttack()
+        {
+            //m_possessedAI.rightDamageArea.enabled = true;
+        }
+
+        public void OnFinishAttack()
+        {
+            //m_possessedAI.leftDamageArea.enabled = false;
+            // m_possessedAI.rightDamageArea.enabled = false;
+        }
+
+
+        public void PlayAttackSound()
+        {
+
+        }
     }
 
-
-    public void OnLeftAttack()
-    {
-        _aiZombieManager.leftDamageArea.enabled = true;
-    }
-
-    public void OnRightAttack()
-    {
-        _aiZombieManager.rightDamageArea.enabled = true;
-    }  
-
-    public void OnFinishAttack()
-    {
-        _aiZombieManager.leftDamageArea.enabled = false;
-        _aiZombieManager.rightDamageArea.enabled = false;
-    }
-    
-    
-    public void PlayAttackSound()
-    {
-     
-    }
 }
+

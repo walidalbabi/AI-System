@@ -3,56 +3,56 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AIState_Patrol : AIState
+
+
+namespace EternalVision.AI
 {
-    
-    [Range(1f, 3f)] [SerializeField] private float _moveSpeed;
-    [Range(10f, 360f)] [SerializeField] private float _rotateSpeed;
-    [SerializeField] private float _stoppingDistance;
-
-    private float _distanceToTarget;
-
-    public override AIState Tick()
+    public class AIState_Patrol : AIState
     {
-        _distanceToTarget = Vector3.Distance(transform.position, _aiZombieManager.currentTarget.targetPos);
 
-        SetAIDestination();
-        _aiZombieManager.FindATargerViaLineOfSight();
-        _aiZombieManager.HandleMoveToTarget();
+        [Range(1f, 3f)][SerializeField] private float _moveSpeed;
+        [Range(10f, 360f)][SerializeField] private float _rotateSpeed;
+        [SerializeField] private float _stoppingDistance;
 
-        if (_aiZombieManager.currentTarget.targetType == AITargetType.Enemy)
+        private float _distanceToTarget;
+
+
+        public override void OnEnterState()
         {
-            return _aiZombieManager.GetAIState(AIStateEnum.Pursuit);
+            m_possessedAI.navMeshAgent.stoppingDistance = _stoppingDistance;
+            //Set Speed
+            m_possessedAI.navMeshAgent.speed = _moveSpeed;
+            m_possessedAI.navMeshAgent.angularSpeed = _rotateSpeed;
+            //Get A random Point
+            m_possessedAI.SetRandomPointForPatrol();
+
+            m_possessedAI.SetFOVAngleToNormal();
+        }
+        public override AIState Tick()
+        {
+            _distanceToTarget = Vector3.Distance(transform.position, m_possessedAI.currentTarget.targetPos);
+
+            SetAIDestination();
+            m_possessedAI.FindATargerViaLineOfSight();
+            m_possessedAI.HandleMoveToTarget();
+
+            if (m_possessedAI.currentTarget.targetType == AITargetType.Enemy)
+            {
+                return m_possessedAI.GetAIState(AIStateEnum.Pursuit);
+            }
+
+            if (_distanceToTarget <= m_possessedAI.navMeshAgent.stoppingDistance || m_possessedAI.navMeshAgent.isPathStale || m_possessedAI.navMeshAgent.pathStatus == NavMeshPathStatus.PathPartial)
+            {
+                return m_possessedAI.GetAIState(AIStateEnum.Idle);
+            }
+            return this;
         }
 
-        if (_distanceToTarget <= _aiZombieManager.navMeshAgent.stoppingDistance || _aiZombieManager.navMeshAgent.isPathStale || _aiZombieManager.navMeshAgent.pathStatus == NavMeshPathStatus.PathPartial)
+        private void SetAIDestination()
         {
-            return _aiZombieManager.GetAIState(AIStateEnum.Idle);
+            m_possessedAI.navMeshAgent.SetDestination(m_possessedAI.currentTarget.targetPos);
         }
-        return this;
-    }
 
-    private void SetAIDestination()
-    {
-        _aiZombieManager.navMeshAgent.SetDestination(_aiZombieManager.currentTarget.targetPos);
-    }
-
-
-    public override void OnEnterState()
-    {
-        _aiZombieManager.navMeshAgent.stoppingDistance = _stoppingDistance;
-        //Set Speed
-        _aiZombieManager.navMeshAgent.speed = _moveSpeed;
-        _aiZombieManager.navMeshAgent.angularSpeed = _rotateSpeed;
-        //Get A random Point
-        _aiZombieManager.SetRandomPointForPatrol();
-
-        _aiZombieManager.SetFOVAngleToNormal();
-    }
-
-
-    public override void SetAIManagerComponent(AIZombieManager component)
-    {
-        _aiZombieManager = component;
     }
 }
+
