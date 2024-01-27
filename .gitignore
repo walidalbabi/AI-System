@@ -70,3 +70,265 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/EternalVision/EntitySystem/Animator.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/AIAnimatorBase.controller
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/AIAnimatorBase.controller.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/BllockHit-UpperBody-Left.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/BllockHit-UpperBody-Left.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/BllockHit-UpperBody-Mid.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/BllockHit-UpperBody-Mid.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/BllockHit-UpperBody-Right.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/BllockHit-UpperBody-Right.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/Block.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/Block.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/Combo-1.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/Combo-1.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/Combo-2.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/Combo-2.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/FallingHeavy.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/FallingHeavy.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/FallingNormal.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/FallingNormal.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/Hit-UpperBody-Left.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/Hit-UpperBody-Left.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/Hit-UpperBody-Mid.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/Hit-UpperBody-Mid.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/Hit-UpperBody-Right.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/Hit-UpperBody-Right.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/Idle-Blocking.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/Idle-Blocking.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/Idle.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/Idle.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/Jump.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/Jump.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/LandHeavy 1.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/LandHeavy 1.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/LandHeavy.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/LandHeavy.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/LandNormal.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/LandNormal.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/SprintForward.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/SprintForward.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkBackward-Blocking.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkBackward-Blocking.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkBackward.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkBackward.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkBackwardLeft-Blocking.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkBackwardLeft-Blocking.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkBackwardLeft.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkBackwardLeft.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkBackwardRight-Blocking.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkBackwardRight-Blocking.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkBackwardRight.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkBackwardRight.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkForward-Blocking.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkForward-Blocking.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkForward.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkForward.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkForwardLeft-Blocking.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkForwardLeft-Blocking.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkForwardLeft.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkForwardLeft.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkForwardRight-Blocking.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkForwardRight-Blocking.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkForwardRight.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkForwardRight.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkLeft-Blocking.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkLeft-Blocking.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkLeft.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkLeft.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkRight-Blocking.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkRight-Blocking.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkRight.anim
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/EmptyStates/WalkRight.anim.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/Overriders.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/Overriders/AI_KatanaOverrideController.overrideController
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/Overriders/AI_KatanaOverrideController.overrideController.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/Overriders/Player_KatanaLocomotionOverrideController.overrideController
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/Overriders/Player_KatanaLocomotionOverrideController.overrideController.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/Overriders/Player_KatanaOverrideController.overrideController
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/Overriders/Player_KatanaOverrideController.overrideController.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/Overriders/Player_MeleeWeaponOverrideController.overrideController
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/Overriders/Player_MeleeWeaponOverrideController.overrideController.meta
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/PlayerAnimatorBase.controller
+Assets/EternalVision/EntitySystem/Animator/ThirdPerson/PlayerAnimatorBase.controller.meta
+Assets/EternalVision/EntitySystem/Animator/UpperBody.mask
+Assets/EternalVision/EntitySystem/Animator/UpperBody.mask.meta
+Assets/EternalVision/EntitySystem/PlayerInputAction.inputactions
+Assets/EternalVision/EntitySystem/PlayerInputAction.inputactions.meta
+Assets/EternalVision/EntitySystem/Prefabs.meta
+Assets/EternalVision/EntitySystem/Prefabs/Entity.meta
+Assets/EternalVision/EntitySystem/Prefabs/Entity/Dummy.prefab
+Assets/EternalVision/EntitySystem/Prefabs/Entity/Dummy.prefab.meta
+Assets/EternalVision/EntitySystem/Prefabs/Entity/HitBox.prefab
+Assets/EternalVision/EntitySystem/Prefabs/Entity/HitBox.prefab.meta
+Assets/EternalVision/EntitySystem/Prefabs/Entity/Items.meta
+Assets/EternalVision/EntitySystem/Prefabs/Entity/Items/Weapons.meta
+Assets/EternalVision/EntitySystem/Prefabs/Entity/Items/Weapons/DamageArea.prefab
+Assets/EternalVision/EntitySystem/Prefabs/Entity/Items/Weapons/DamageArea.prefab.meta
+Assets/EternalVision/EntitySystem/Prefabs/Entity/Items/Weapons/Katana.prefab
+Assets/EternalVision/EntitySystem/Prefabs/Entity/Items/Weapons/Katana.prefab.meta
+Assets/EternalVision/EntitySystem/Prefabs/Entity/Items/Weapons/RightSword.prefab
+Assets/EternalVision/EntitySystem/Prefabs/Entity/Items/Weapons/RightSword.prefab.meta
+Assets/EternalVision/EntitySystem/Prefabs/Entity/Player.meta
+Assets/EternalVision/EntitySystem/Prefabs/Entity/Player/Player.prefab
+Assets/EternalVision/EntitySystem/Prefabs/Entity/Player/Player.prefab.meta
+Assets/EternalVision/EntitySystem/Scenes.meta
+Assets/EternalVision/EntitySystem/Scenes/Demo.meta
+Assets/EternalVision/EntitySystem/Scenes/Demo.unity
+Assets/EternalVision/EntitySystem/Scenes/Demo.unity.meta
+Assets/EternalVision/EntitySystem/Scenes/Demo/NavMesh-Level 1.asset
+Assets/EternalVision/EntitySystem/Scenes/Demo/NavMesh-Level 1.asset.meta
+Assets/EternalVision/EntitySystem/Scenes/Demo/NavMesh-Level.asset
+Assets/EternalVision/EntitySystem/Scenes/Demo/NavMesh-Level.asset.meta
+Assets/EternalVision/EntitySystem/Script.meta
+Assets/EternalVision/EntitySystem/Script/Editor.meta
+Assets/EternalVision/EntitySystem/Script/Editor/EntityManagerEditor.cs
+Assets/EternalVision/EntitySystem/Script/Editor/EntityManagerEditor.cs.meta
+Assets/EternalVision/EntitySystem/Script/Editor/FactionsDrawer.cs
+Assets/EternalVision/EntitySystem/Script/Editor/FactionsDrawer.cs.meta
+Assets/EternalVision/EntitySystem/Script/Editor/ListedFactionsPropertyDrawer.cs
+Assets/EternalVision/EntitySystem/Script/Editor/ListedFactionsPropertyDrawer.cs.meta
+Assets/EternalVision/EntitySystem/Script/Entities.meta
+Assets/EternalVision/EntitySystem/Script/Entities/EntityAnimationStateBehaviour.meta
+Assets/EternalVision/EntitySystem/Script/Entities/EntityAnimationStateBehaviour/ESMB_BlockAttack.cs
+Assets/EternalVision/EntitySystem/Script/Entities/EntityAnimationStateBehaviour/ESMB_BlockAttack.cs.meta
+Assets/EternalVision/EntitySystem/Script/Entities/EntityAnimationStateBehaviour/ESMB_BlockMovement.cs
+Assets/EternalVision/EntitySystem/Script/Entities/EntityAnimationStateBehaviour/ESMB_BlockMovement.cs.meta
+Assets/EternalVision/EntitySystem/Script/Entities/EntityAnimationStateBehaviour/ESMB_BlockRotation.cs
+Assets/EternalVision/EntitySystem/Script/Entities/EntityAnimationStateBehaviour/ESMB_BlockRotation.cs.meta
+Assets/EternalVision/EntitySystem/Script/Entities/EntityAnimationStateBehaviour/ESMB_SetRootMotion.cs
+Assets/EternalVision/EntitySystem/Script/Entities/EntityAnimationStateBehaviour/ESMB_SetRootMotion.cs.meta
+Assets/EternalVision/EntitySystem/Script/Entities/EntityBrain.meta
+Assets/EternalVision/EntitySystem/Script/Entities/EntityBrain/EntityAnimator.cs
+Assets/EternalVision/EntitySystem/Script/Entities/EntityBrain/EntityAnimator.cs.meta
+Assets/EternalVision/EntitySystem/Script/Entities/EntityBrain/EntityAnimatorEventListener.cs
+Assets/EternalVision/EntitySystem/Script/Entities/EntityBrain/EntityAnimatorEventListener.cs.meta
+Assets/EternalVision/EntitySystem/Script/Entities/EntityBrain/EntityBrain.cs
+Assets/EternalVision/EntitySystem/Script/Entities/EntityBrain/EntityBrain.cs.meta
+Assets/EternalVision/EntitySystem/Script/Entities/EntityBrain/Warrior.meta
+Assets/EternalVision/EntitySystem/Script/Entities/EntityBrain/Warrior/PlayerWarrior.cs
+Assets/EternalVision/EntitySystem/Script/Entities/EntityBrain/Warrior/PlayerWarrior.cs.meta
+Assets/EternalVision/EntitySystem/Script/Entities/EntityVitals.meta
+Assets/EternalVision/EntitySystem/Script/Entities/EntityVitals/EntityBodyPart.cs
+Assets/EternalVision/EntitySystem/Script/Entities/EntityVitals/EntityBodyPart.cs.meta
+Assets/EternalVision/EntitySystem/Script/Entities/EntityVitals/EntityHealth.cs
+Assets/EternalVision/EntitySystem/Script/Entities/EntityVitals/EntityHealth.cs.meta
+Assets/EternalVision/EntitySystem/Script/Entities/EntityVitals/IHitbox.cs
+Assets/EternalVision/EntitySystem/Script/Entities/EntityVitals/IHitbox.cs.meta
+Assets/EternalVision/EntitySystem/Script/Entities/Inventory.meta
+Assets/EternalVision/EntitySystem/Script/Entities/Inventory/EntityInventory.cs
+Assets/EternalVision/EntitySystem/Script/Entities/Inventory/EntityInventory.cs.meta
+Assets/EternalVision/EntitySystem/Script/Entities/Inventory/PlayerInventory.cs
+Assets/EternalVision/EntitySystem/Script/Entities/Inventory/PlayerInventory.cs.meta
+Assets/EternalVision/EntitySystem/Script/Entities/Items.meta
+Assets/EternalVision/EntitySystem/Script/Entities/Items/EntityItem.cs
+Assets/EternalVision/EntitySystem/Script/Entities/Items/EntityItem.cs.meta
+Assets/EternalVision/EntitySystem/Script/Entities/Items/Weapon.meta
+Assets/EternalVision/EntitySystem/Script/Entities/Items/Weapon/EntityWeapon.cs
+Assets/EternalVision/EntitySystem/Script/Entities/Items/Weapon/EntityWeapon.cs.meta
+Assets/EternalVision/EntitySystem/Script/Entities/Items/Weapon/MeleeWeaponTriggerInfo.cs
+Assets/EternalVision/EntitySystem/Script/Entities/Items/Weapon/MeleeWeaponTriggerInfo.cs.meta
+Assets/EternalVision/EntitySystem/Script/Entities/Player.meta
+Assets/EternalVision/EntitySystem/Script/Entities/Player/InputManager.cs
+Assets/EternalVision/EntitySystem/Script/Entities/Player/InputManager.cs.meta
+Assets/EternalVision/EntitySystem/Script/Entities/Player/PossessedCharacter.cs
+Assets/EternalVision/EntitySystem/Script/Entities/Player/PossessedCharacter.cs.meta
+Assets/EternalVision/EntitySystem/Script/Entities/PossesedEntity.cs
+Assets/EternalVision/EntitySystem/Script/Entities/PossesedEntity.cs.meta
+Assets/EternalVision/EntitySystem/Script/Manager.meta
+Assets/EternalVision/EntitySystem/Script/Manager/EntityManager.cs
+Assets/EternalVision/EntitySystem/Script/Manager/EntityManager.cs.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Animations.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Animations/MeleeWarrior@Death01.fbx
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Animations/MeleeWarrior@Death01.fbx.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Animations/OneHanded.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Animations/OneHanded/1H@CombatIdle01.fbx
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Animations/OneHanded/1H@CombatIdle01.fbx.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Animations/OneHanded/1H@TakeDamage01.fbx
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Animations/OneHanded/1H@TakeDamage01.fbx.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Animations/OneHanded/Movement.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Animations/OneHanded/Movement/1H@Run01.fbx
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Animations/OneHanded/Movement/1H@Run01.fbx.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Animations/OneHanded/Movement/1H@Sprint01.fbx
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Animations/OneHanded/Movement/1H@Sprint01.fbx.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Animations/OneHanded/RightHand.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Animations/OneHanded/RightHand/RightHand@Attack01.fbx
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Animations/OneHanded/RightHand/RightHand@Attack01.fbx.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Animations/OneHanded/Shield.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Animations/OneHanded/Shield/Shield@ShieldAttack01.fbx
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Animations/OneHanded/Shield/Shield@ShieldAttack01.fbx.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@CombatIdle.controller
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@CombatIdle.controller.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@RHAttacks.controller
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@RHAttacks.controller.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@RunBackward.controller
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@RunBackward.controller.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@RunBackwardLeft.controller
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@RunBackwardLeft.controller.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@RunBackwardRight.controller
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@RunBackwardRight.controller.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@RunForward.controller
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@RunForward.controller.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@RunForwardLeft.controller
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@RunForwardLeft.controller.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@RunForwardRight.controller
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@RunForwardRight.controller.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@RunLeft.controller
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@RunLeft.controller.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@RunRight.controller
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@RunRight.controller.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@ShieldAttacks.controller
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@ShieldAttacks.controller.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@Sprint.controller
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@Sprint.controller.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@TakeDamage.controller
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/1H/1H@TakeDamage.controller.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/MW@Death01.controller
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/MW@Death01.controller.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Materials.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Materials/MeleeWarriorBlueMaterial.mat
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Materials/MeleeWarriorBlueMaterial.mat.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Materials/MeleeWarriorFloorMaterial.mat
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Materials/MeleeWarriorFloorMaterial.mat.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Materials/MeleeWarriorRedMaterial.mat
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Materials/MeleeWarriorRedMaterial.mat.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Melee Warrior - Demo Scene.unity
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Melee Warrior - Demo Scene.unity.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Models.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Models/Characters.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Models/Characters/HumanMeleeWarrior.fbx
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Models/Characters/HumanMeleeWarrior.fbx.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Models/Characters/MeleeWarriorUpperBody.mask
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Models/Characters/MeleeWarriorUpperBody.mask.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Models/Weapons.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Models/Weapons/MeleeWarriorShield.fbx
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Models/Weapons/MeleeWarriorShield.fbx.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Models/Weapons/MeleeWarriorSword.fbx
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Models/Weapons/MeleeWarriorSword.fbx.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Prefabs.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Prefabs/Characters.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Prefabs/Characters/ShieldWarrior.prefab
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Prefabs/Characters/ShieldWarrior.prefab.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Prefabs/Characters/SwordWarrior.prefab
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Prefabs/Characters/SwordWarrior.prefab.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Prefabs/Weapons.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Prefabs/Weapons/1HSword.prefab
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Prefabs/Weapons/1HSword.prefab.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Prefabs/Weapons/Shield.prefab
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Prefabs/Weapons/Shield.prefab.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Textures.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Textures/MeleeWarriorFloor.png
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Textures/MeleeWarriorFloor.png.meta
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Textures/MeleeWarriorTexture.png
+Assets/EternalVision/EntitySystem/ThirdPartyDemo/Kevin Iglesias/Melee Warrior Animations/Textures/MeleeWarriorTexture.png.meta
+Assets/EternalVision/GlobalSystemHelper.cs
+Assets/EternalVision/GlobalSystemHelper.cs.meta
+Assets/EternalVision/EntitySystem.meta
