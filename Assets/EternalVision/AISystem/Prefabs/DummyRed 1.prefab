@@ -1444,7 +1444,7 @@ GameObject:
   - component: {fileID: 7381892645514063538}
   - component: {fileID: 8065784707626271435}
   m_Layer: 31
-  m_Name: DummyRed
+  m_Name: DummyRed 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

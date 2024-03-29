@@ -6,12 +6,13 @@ using UnityEngine.AI;
 
 namespace EternalVision.AI
 {
-    public enum AIStateEnum { Idle, Patrol, Pursuit, Attack, Investigate }
+    public enum AIStateEnum { Idle, Patrol, Pursuit, Attack, BlockAttack, Investigate, StayInRange, InFormation }
     public enum AITargetType { none, Enemy, Noise, Point }
 
     /// <summary>
     /// Struct Represent The target That the AI is seeing
     /// </summary>
+    [System.Serializable]
     public struct AITarget
     {
         public Transform targetTransform { get; private set; }
@@ -65,28 +66,27 @@ namespace EternalVision.AI
 
         //Inspector
         [Header("AI Settings")]
-        [SerializeField] private AIState m_startingState;
-        [SerializeField] private bool m_rootMotion;
+        [SerializeField] protected AIState m_startingState;
+        [SerializeField] protected bool m_rootMotion;
         [Header("Detection")]
-        [SerializeField] private LayerMask m_detectionLayer;
-        [SerializeField] private LayerMask m_ignoredLineOfSightLayer;
-        [SerializeField] private float m_detectionRadius;
-        [SerializeField][Range(-360, 0)] private float m_minFieldOfViewAngle;
-        [SerializeField][Range(0, 360)] private float m_maxFieldOfViewAngle;
-        [SerializeField][Range(-360, 0)] private float m_minFieldOfViewAngleOnHavingTarget;
-        [SerializeField][Range(0, 360)] private float m_maxFieldOfViewAngleOnHavingTarget;
-        [SerializeField] private float m_looseSightTime = 3f;
+        [SerializeField] protected LayerMask m_detectionLayer;
+        [SerializeField] protected LayerMask m_ignoredLineOfSightLayer;
+        [SerializeField] protected float m_detectionRadius;
+        [SerializeField][Range(-360, 0)] protected float m_minFieldOfViewAngle;
+        [SerializeField][Range(0, 360)] protected float m_maxFieldOfViewAngle;
+        [SerializeField][Range(-360, 0)] protected float m_minFieldOfViewAngleOnHavingTarget;
+        [SerializeField][Range(0, 360)] protected float m_maxFieldOfViewAngleOnHavingTarget;
+        [SerializeField] protected float m_looseSightTime = 3f;
 
         [Header("References")]
-        [SerializeField] private Transform m_playerHeadTransform;
+        [SerializeField] protected Transform m_playerHeadTransform;
 
         [Header("Others")]
-        [SerializeField] private bool m_inverseForward;
+        [SerializeField] protected bool m_inverseForward;
 
         //Private
         private AIState m_currentState;
         private AIState m_nextState;
-        private AITarget m_currentTarget;
 
         private float m_minFOVAngle;
         private float m_maxFOVAngle;
@@ -96,15 +96,24 @@ namespace EternalVision.AI
 
         private IEnumerator m_clearTargetCoroutine;
 
-        private List<Collider> m_targetsToFilter = new List<Collider>();
-        private List<AIState> m_allAIStates = new List<AIState>();
+        private PossesedEntity m_attackerOnThisOwner;
 
-        private NavMeshAgent m_navMeshAgent;
+        //Protected
+        protected AITarget m_currentTarget;
+
+        protected List<Transform> m_targetsToFilter = new List<Transform>();
+        protected List<AIState> m_allAIStates = new List<AIState>();
+
+        protected AIFormationManager m_aiFormation;
+
+        protected NavMeshAgent m_navMeshAgent;
 
 
         //Properties
         public AITarget currentTarget => m_currentTarget;
         public NavMeshAgent navMeshAgent => m_navMeshAgent;
+        public AIFormationManager aiFormation => m_aiFormation;
+        public PossesedEntity attackerOnThisOwner => m_attackerOnThisOwner;
 
         #endregion Variables
 
@@ -137,24 +146,36 @@ namespace EternalVision.AI
             {
                 state.SetAIManagerComponent(this);
             }
+
+
+            m_entityBrain.entityHealth.OnEntityGotHit += ResetAttackerOnOwner;
+        }
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+
+            m_entityBrain.entityHealth.OnEntityGotHit -= ResetAttackerOnOwner;
         }
         protected override void Update()
         {
-            base.Awake();
+            base.Update();
 
             HandleState();
 
             Vector3 direction = m_navMeshAgent.nextPosition - transform.position;
-            m_entityBrain.SetMoveAnimationValue(direction, m_navMeshAgent.speed, m_navMeshAgent.speed >= 3);
+            if (m_navMeshAgent.enabled)
+                m_entityBrain.SetMoveAnimationValue(direction, m_navMeshAgent.speed, m_navMeshAgent.speed >= 3, true);
         }
-        private void LateUpdate()
+        protected void LateUpdate()
         {
             if (m_currentTarget.targetPos != Vector3.zero)
                 m_currentTarget.SetTargetDistance(Vector3.Distance(transform.position, m_currentTarget.targetPos));
         }
-        private void OnAnimatorMove()
+        protected void OnAnimatorMove()
         {
-            if (m_rootMotion || m_entityBrain.isPerformingAttack || entityBrain.entityAnimator.rootMotion)
+          //  if (m_tickPassedForCheckingTargets % EntityManager.instance.tickrate != 0) return;
+
+            if (m_rootMotion || m_entityBrain.isPerformingAttack || m_entityBrain.isHit || entityBrain.entityAnimator.rootMotion)
             {
                 Vector3 rootPosition = m_entityBrain.entityAnimator.animator.rootPosition;
                 rootPosition.y = m_navMeshAgent.nextPosition.y;
@@ -163,7 +184,7 @@ namespace EternalVision.AI
             else
                 MoveEntity(m_navMeshAgent.nextPosition); // Important for 2d locomotion
         }
-        private void OnDrawGizmosSelected()
+        protected void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.cyan;
             Gizmos.DrawWireSphere(transform.position, m_detectionRadius);
@@ -223,22 +244,27 @@ namespace EternalVision.AI
                 if (m_nextState != m_currentState)
                 {
                     m_currentState.OnEnterState();
+                    if (m_nextState != null) m_nextState.OnExitState();
                     m_nextState = m_currentState;
-                    Debug.Log(m_currentState.currentState);
+                   // Debug.Log(m_currentState.currentState);
                 }
 
                 //Run State Logic
                 m_currentState = m_currentState.Tick();
             }
+            else
+            {
+                m_currentState = GetAIState(AIStateEnum.Idle);
+            }
         }
 
         public void HandleMoveToTarget()
         {
-            if (m_navMeshAgent.pathStatus == NavMeshPathStatus.PathInvalid || m_navMeshAgent.isPathStale)
+            if (m_navMeshAgent.enabled && m_navMeshAgent.pathStatus == NavMeshPathStatus.PathInvalid || m_navMeshAgent.isPathStale)
             {
                 if (entityBrain.entityAnimator.animator != null)
                 {
-                    m_entityBrain.SetMoveAnimationValue(Vector3.zero, 0, false);
+                    m_entityBrain.SetMoveAnimationValue(Vector3.zero, 0, false, true);
                 }
                 return;
             }
@@ -272,7 +298,7 @@ namespace EternalVision.AI
             }
         }
 
-        public void FindATargerViaLineOfSight()
+        public virtual void FindATargerViaLineOfSight()
         {
             //Detect All Enteties in the radius
             Collider[] colliders = Physics.OverlapSphere(transform.position, m_detectionRadius, m_detectionLayer);
@@ -285,6 +311,7 @@ namespace EternalVision.AI
                 {
                     EntityBrain entityBrainTarget = colliders[i].gameObject.GetComponent<EntityBrain>();
                     if (entityBrainTarget == null) continue;
+                    if (entityBrainTarget.entityHealth.isDead) continue;
                     //Check for factions
                     if (!IsTargetAnEnemy(entityBrainTarget)) continue;
 
@@ -302,7 +329,7 @@ namespace EternalVision.AI
 
                         if (!Physics.Linecast(startPoint, endPoint, out hit, m_ignoredLineOfSightLayer))
                         {
-                            m_targetsToFilter.Add(colliders[i]);
+                            m_targetsToFilter.Add(colliders[i].transform);
                         }
 
                     }
@@ -315,7 +342,13 @@ namespace EternalVision.AI
                 Transform target = EternalVision.GlobalHelper.GlobalSystemHelper.GetClosestTransform(transform, m_targetsToFilter.ToArray());
                 float distance = Vector3.Distance(transform.position, target.position);
                 m_currentTarget.Settarget(target, target.position, distance, AITargetType.Enemy);
+                m_currentSelectedTarget = target;
                 SetClearTargetAfterDelay();
+            }
+            else
+            {
+                m_currentTarget.Cleartarget();
+                m_currentSelectedTarget = null;
             }
 
         }
@@ -359,12 +392,35 @@ namespace EternalVision.AI
             transform.position = dir;
             m_navMeshAgent.nextPosition = dir;
         }
+        protected override IEnumerator AddForceCoroutine(Vector3 dir)
+        {
+            m_navMeshAgent.enabled = false;
+            yield return base.AddForceCoroutine(dir);
+            m_navMeshAgent.enabled = true;
+        }
+        public void SetAttackOnOwner(PossesedEntity attacker)
+        {
+            m_attackerOnThisOwner = attacker;
+        }
 
+        public void AddAIToFormation(AIFormationManager targetAIFormation)
+        {
+            m_aiFormation = targetAIFormation;
+        }
         #endregion Functions
+
+        #region Callback
+
+        private void ResetAttackerOnOwner(Transform transform)
+        {
+            m_attackerOnThisOwner = null;
+        }
+
+        #endregion Callback
 
         #region Getters
 
-        private Vector3 GetRandomPointOnNavMesh()
+        protected Vector3 GetRandomPointOnNavMesh()
         {
             Vector3 randomDirection = Random.insideUnitSphere * 10f;
             randomDirection += transform.position;
@@ -382,32 +438,10 @@ namespace EternalVision.AI
 
             return null;
         }
-        public bool IsTargetAnEnemy(EntityBrain entityTarget)
+
+        public override bool IsMoving()
         {
-            if (m_entityBrain.faction == entityTarget.faction) return false;
-            for (int i = 0; i < EntityManager.instance.factionsRelations.Count; i++)
-            {
-                if (EntityManager.instance.factionsRelations[i].EntityFaction == m_entityBrain.faction) // Find refference to our current faction in the factions relations manager
-                {
-                    for (int j = 0; j < EntityManager.instance.factionsRelations[i].allianceFactions.factionsList.Count; j++)
-                    {
-                        if (EntityManager.instance.factionsRelations[i].allianceFactions.factionsList[j] == entityTarget.faction) // Target is in the alliance List
-                        {
-                            return false;
-                        }
-                    }
-                    for (int j = 0; j < EntityManager.instance.factionsRelations[i].enemyFactions.factionsList.Count; j++)// Target is in the Enemies List
-                    {
-                        if (EntityManager.instance.factionsRelations[i].enemyFactions.factionsList[j] == entityTarget.faction)
-                        {
-                            return true;
-                        }
-                    }
-                }
-            }
-
-
-            return false;
+            return m_navMeshAgent.velocity.sqrMagnitude > .1f;
         }
 
         #endregion Getters

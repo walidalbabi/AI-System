@@ -37,7 +37,7 @@ namespace EternalVision.AI
 
                 if (!targetHit.Equals(null))
                 {
-                    HitData newHitData = new HitData(m_entityBrainOwner.transform, other.ClosestPointOnBounds(targetHit.GetPosition()));
+                    HitData newHitData = new HitData(m_entityBrainOwner.transform, other.ClosestPointOnBounds(targetHit.GetPosition()), Vector3.zero);
                     targetHit.DoDamage(newHitData, (int)_dmg);
                 }
 

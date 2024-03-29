@@ -1431,10 +1431,11 @@ GameObject:
   - component: {fileID: 1239173821003278280}
   - component: {fileID: 7885526864167515375}
   - component: {fileID: 6323372769184361552}
-  - component: {fileID: 5194455851130468715}
+  - component: {fileID: 7352192926293873298}
   - component: {fileID: 6173945741339174527}
   - component: {fileID: 6743167765961215836}
   - component: {fileID: 9030252008571932}
+  - component: {fileID: 5245792700458900276}
   - component: {fileID: 2391346133831891858}
   - component: {fileID: 4857255280856988982}
   - component: {fileID: 6056973632510130431}
@@ -1558,7 +1559,7 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &5194455851130468715
+--- !u!114 &7352192926293873298
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1570,6 +1571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 213ce12db99839a43aaba71aec44ada2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_canDamageFriendly: 0
   m_startingState: {fileID: 6056973632510130431}
   m_rootMotion: 0
   m_detectionLayer:
@@ -1599,6 +1601,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_faction: Blue
+  m_dizzyTime: 0
+  m_targetLockOffset: {fileID: 0}
 --- !u!114 &6743167765961215836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1612,6 +1616,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxHealth: 1000
+  m_parryTime: 0.2
+  m_dizzyDamageMultiplier: 1
+  m_blockAttackCost:
+    statName: 
+    consumptionAmount: 0
+    statType: 0
 --- !u!114 &9030252008571932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1627,7 +1637,23 @@ MonoBehaviour:
   m_rightHandSocket: {fileID: 4881232849201133440}
   m_leftHandSocket: {fileID: 3458159712425140528}
   m_entityLoadout:
-  - {fileID: 9093213775017166946, guid: 9cf3e13a5da87e34dbb837193dab5bb8, type: 3}
+  - {fileID: 1953741763176049347, guid: 9cf3e13a5da87e34dbb837193dab5bb8, type: 3}
+--- !u!114 &5245792700458900276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3258369672751194778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a437c5e4b81534c4f8fbdcfd7df82e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_playerFootstepSurfaceData: {fileID: 11400000, guid: 4176b89b10dbfa2429250b469d63335f, type: 2}
+  m_footstepCheckLayer:
+    serializedVersion: 2
+    m_Bits: 65
 --- !u!114 &2391346133831891858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1665,8 +1691,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_currentState: 0
-  _minIdleTime: 0
-  _maxIdleTime: 5
+  m_minIdleTime: 0
+  m_maxIdleTime: 5
 --- !u!114 &8676548149215791615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1680,9 +1706,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_currentState: 1
-  _moveSpeed: 1.5
-  _rotateSpeed: 360
-  _stoppingDistance: 1
+  m_moveSpeed: 1.6
+  m_rotateSpeed: 360
+  m_stoppingDistance: 0
 --- !u!114 &2119659465271369503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1696,11 +1722,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_currentState: 2
-  _minDistanceToStartWalking: 3
-  _moveSpeed: 3
-  _defaultWalkSpeed: 1.5
-  _rotateSpeed: 360
-  _stoppingDistance: 1.4
+  m_minDistanceToStartWalking: 3
+  m_moveSpeed: 3
+  m_defaultWalkSpeed: 1.6
+  m_rotateSpeed: 360
+  m_stoppingDistance: 1.4
 --- !u!114 &7381892645514063538
 MonoBehaviour:
   m_ObjectHideFlags: 0

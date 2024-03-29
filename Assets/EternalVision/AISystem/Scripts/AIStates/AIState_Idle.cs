@@ -8,8 +8,8 @@ namespace EternalVision.AI
     public class AIState_Idle : AIState
     {
         [Header("Idle Time Range")]
-        [SerializeField] private float _minIdleTime;
-        [SerializeField] private float _maxIdleTime;
+        [SerializeField] private float m_minIdleTime;
+        [SerializeField] private float m_maxIdleTime;
 
 
         private bool _isIdleFinish;
@@ -25,7 +25,7 @@ namespace EternalVision.AI
                 m_possessedAI.entityBrain.entityAnimator.SetFloat("Speed", 0f, .1f);
             }
 
-            StartCoroutine(WaitforIdleToFinish(Random.Range(_minIdleTime, _maxIdleTime)));
+            StartCoroutine(WaitforIdleToFinish(Random.Range(m_minIdleTime, m_maxIdleTime)));
 
             m_possessedAI.SetFOVAngleToNormal();
         }
@@ -33,6 +33,10 @@ namespace EternalVision.AI
         {
             m_possessedAI.FindATargerViaLineOfSight();
 
+            if (m_possessedAI.aiFormation)
+            {
+                return m_possessedAI.GetAIState(AIStateEnum.InFormation);
+            }
             if (m_possessedAI.currentTarget.targetType == AITargetType.Enemy && m_possessedAI.currentTarget.targetTransform != null)
             {
                 return m_possessedAI.GetAIState(AIStateEnum.Pursuit);

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace EternalVision.AI
 {
-    public class AIHealth : EntityHealth
+    public class AIHealth : WarriorHealth
     {
 
         //Private
@@ -30,7 +30,8 @@ namespace EternalVision.AI
             m_possessedAI.navMeshAgent.enabled = false;
             m_possessedAI.enabled = false;
             m_possessedAI.GetComponent<Collider>().enabled = false;
-            m_possessedAI.GetComponent<Rigidbody>().isKinematic = true;
+            if (m_possessedAI.GetComponent<Rigidbody>())
+                m_possessedAI.GetComponent<Rigidbody>().isKinematic = true;
         }
 
         #endregion Functions
